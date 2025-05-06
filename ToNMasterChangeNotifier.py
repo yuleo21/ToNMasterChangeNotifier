@@ -63,7 +63,7 @@ if __name__ == '__main__':
         except Exception as e:
             now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             print(f"{now} - WebSocket 接続に失敗しました: {e}")
-            print("ToNSaveManager を起動し、「WebSocket API サーバー」を有効にしてください。")
+            print("ToN Save Manager を起動し、「WebSocket API サーバー」を有効にしてください。")
 
         try:
             input("再接続を試みるには Enter キーを押してください。終了するには Ctrl+C を押してください...")
