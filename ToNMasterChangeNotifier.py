@@ -5,7 +5,7 @@ def ensure_package(pkg_name):
     try:
         __import__(pkg_name)
     except ImportError:
-        ans = input(f"パッケージ '{pkg_name}' が見つかりません。インストールしますか？ [Y/n]: ").strip().lower()
+        ans = input(f"パッケージ '{pkg_name}' が見つかりません。インストールしますか？ [y/n]: ").strip().lower()
         if ans in ('', 'y', 'yes'):
             subprocess.check_call([sys.executable, '-m', 'pip', 'install', pkg_name])
         else:
