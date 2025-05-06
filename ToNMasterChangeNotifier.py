@@ -1,7 +1,6 @@
 import sys
 import subprocess
 
-# 依存ライブラリのチェック／インストール
 def ensure_package(pkg_name):
     try:
         __import__(pkg_name)
@@ -23,19 +22,15 @@ import os
 import winsound
 
 def resource_path(relative_path):
-    # 実行ファイルのあるディレクトリを取得
     if getattr(sys, 'frozen', False):
-        # PyInstallerでパッケージ化されている場合
         base = os.path.dirname(sys.executable)
     else:
-        # スクリプトとして実行される場合
         base = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(base, relative_path)
 
 WS_URI = 'ws://127.0.0.1:11398'
 WAV_FILE = resource_path('MasterChanged.wav')
 
-# 起動時に音声ファイルの存在確認
 if not os.path.isfile(WAV_FILE):
     print(f"警告: サウンドファイルが見つかりません: {WAV_FILE}")
     sound_available = False
