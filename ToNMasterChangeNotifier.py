@@ -68,4 +68,4 @@ if __name__ == '__main__':
         try:
             input("再接続を試みるには Enter キーを押してください。終了するには Ctrl+C を押してください...")
         except KeyboardInterrupt:
-            pass
+            break
